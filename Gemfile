@@ -81,6 +81,12 @@ gem "solidus_support"
 gem "truncate_html"
 gem "view_component", "~> 3.0"
 
+# Internationalization
+gem 'solidus_i18n', '~> 2.0'
+gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
+gem 'kaminari-i18n', '~> 0.5.0'
+gem 'routing-filter', '~> 0.7.0'
+
 group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "database_cleaner", "~> 1.7"
