@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  filter :locale
+
   devise_for(:user, {
     class_name: 'Spree::User',
     singular: :spree_user,
