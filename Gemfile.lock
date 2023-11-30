@@ -81,7 +81,7 @@ GEM
       execjs (~> 2)
     awesome_nested_set (3.6.0)
       activerecord (>= 4.0.0, < 7.2)
-    bcrypt (3.1.19)
+    bcrypt (3.1.20)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -130,10 +130,10 @@ GEM
       activerecord (>= 4.2, < 8)
     erubi (1.12.0)
     execjs (2.9.1)
-    factory_bot (6.2.1)
+    factory_bot (6.4.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
+    factory_bot_rails (6.4.0)
+      factory_bot (~> 6.4)
       railties (>= 5.0.0)
     ffaker (2.23.0)
     ffi (1.16.3)
@@ -180,6 +180,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     kt-paperclip (7.2.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -221,7 +224,9 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.6.0)
-    nokogiri (1.15.4-x86_64-darwin)
+    nokogiri (1.15.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     omnes (0.2.2)
     orm_adapter (0.5.0)
@@ -233,7 +238,7 @@ GEM
     polyglot (0.3.5)
     psych (4.0.6)
       stringio
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.3)
@@ -265,6 +270,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.8)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.8)
       actionpack (= 7.0.8)
       activesupport (= 7.0.8)
@@ -287,6 +295,9 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
+    routing-filter (0.7.0)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
     rspec-activemodel-mocks (1.1.0)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -328,10 +339,11 @@ GEM
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.22.1)
+    rubocop-rails (2.22.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
+      rubocop-ast (>= 1.30.0, < 2.0)
     rubocop-rspec (2.25.0)
       rubocop (~> 1.40)
       rubocop-capybara (~> 2.17)
@@ -406,6 +418,9 @@ GEM
       ransack (~> 2.0)
       sprockets-rails
       state_machines-activerecord (~> 0.6)
+    solidus_i18n (2.2.0)
+      solidus_core (>= 1.1, < 5)
+      solidus_support (~> 0.4)
     solidus_sample (4.2.3)
       solidus_core (= 4.2.3)
     solidus_support (0.10.0)
@@ -460,6 +475,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -473,11 +489,14 @@ DEPENDENCIES
   ffaker (~> 2.13)
   importmap-rails
   jbuilder
+  kaminari-i18n (~> 0.5.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)
   rails-controller-testing (~> 1.0.5)
+  rails-i18n (~> 7.0, >= 7.0.8)
   responders
+  routing-filter (~> 0.7.0)
   rspec-activemodel-mocks (~> 1.1.0)
   rspec-rails
   rubocop (~> 1.0)
@@ -487,6 +506,7 @@ DEPENDENCIES
   selenium-webdriver
   solidus (~> 4.2, >= 4.2.3)
   solidus_auth_devise (~> 2.5)
+  solidus_i18n (~> 2.0)
   solidus_support
   sprockets-rails
   stimulus-rails
