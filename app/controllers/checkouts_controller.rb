@@ -178,16 +178,20 @@ class CheckoutsController < CheckoutBaseController
     return unless registration_required?
 
     store_location
-    redirect_to new_checkout_session_path
+    # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
+    # redirect_to new_checkout_session_path
   end
 
   def registration_required?
-    Spree::Auth::Config[:registration_step] &&
+    # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
+    # Spree::Auth::Config[:registration_step] &&
       !already_registered?
   end
 
+  # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
   def already_registered?
-    spree_current_user || guest_authenticated?
+     # spree_current_user || guest_authenticated?
+    guest_authenticated?
   end
 
   def guest_authenticated?
