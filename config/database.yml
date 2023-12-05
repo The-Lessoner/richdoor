@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: richdoor_production
-  username: richdoor
-  password: <%= ENV["RICHDOOR_DATABASE_PASSWORD"] %>
+#  database: richdoor_production
+#  username: richdoor
+#  password: <%#= ENV["RICHDOOR_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
