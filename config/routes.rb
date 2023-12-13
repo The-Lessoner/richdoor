@@ -55,9 +55,11 @@ Rails.application.routes.draw do
 
   get '/orders/:id/token/:token' => 'orders#show', as: :token_order
 
-  resources :orders, only: :show do
-    resources :coupon_codes, only: :create
-  end
+  #https://trello.com/c/u2UFdYnt/7-remove-coupon-function
+  # resources :orders, only: :show do
+  #   resources :coupon_codes, only: :create
+  # end
+  resources :orders, only: :show
 
   resource :cart, only: [:show, :update] do
     put 'empty'
