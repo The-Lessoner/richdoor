@@ -13,7 +13,16 @@
     <%= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
   <% end %>
 
+<!--  https://trello.com/c/CQKgoAUG/13-add-a-link-to-the-cart-to-the-header-->
   <div class="cart-link" id="link-to-cart" data-top-bar-target="cartLink">
+    <%= link_to cart_path do %>
+      <div class="cart-info" id="cart-info"> <!-- заменили класс badg на cart-info -->
+        <%= image_tag('icon-shopping-cart.svg', alt: 'Cart') %>
+        <span class="link-text" id="cart-badge">
+         <%= current_order.item_count if current_order.present? %>
+      </span>
+      </div>
+    <% end %>
     <noscript>
       <%= link_to t('spree.cart'), cart_path %>
     </noscript>

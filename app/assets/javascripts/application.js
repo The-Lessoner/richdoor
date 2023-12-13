@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// https://trello.com/c/CQKgoAUG/13-add-a-link-to-the-cart-to-the-header
+document.addEventListener("turbo:load", function() {
+    document.addEventListener('ajax:success', function(event) {
+        var cartBadge = document.getElementById('cart-badge');
+        if (event.detail.cart_count > 0) {
+            cartBadge.textContent = event.detail.cart_count;
+            cartBadge.classList.add('badge');
+        } else {
+            cartBadge.textContent = '';
+            cartBadge.classList.remove('badge');
+        }
+    });
+});
