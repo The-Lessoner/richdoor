@@ -74,8 +74,7 @@ end
 gem 'solidus', '~> 4.2', '>= 4.2.3'
 
 
- gem "solidus_auth_devise", "~> 2.5"
-
+gem "solidus_auth_devise", "~> 2.5"
 gem "responders"
 gem "canonical-rails"
 gem "solidus_support"
