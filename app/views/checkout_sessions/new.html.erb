@@ -1,6 +1,6 @@
 <%= render 'shared/error_messages', target: @user %>
-
-<%= render template: 'user_sessions/new' %>
+<!--https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui-->
+<%#= render template: 'user_sessions/new' %>
 
 <% if Spree::Config[:allow_guest_checkout] %>
   <%= render 'checkout_guest_sessions/form' %>

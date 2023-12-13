@@ -7,11 +7,12 @@
     <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
   </div>
 
-  <% if spree_current_user %>
-    <%= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
-  <% else %>
-    <%= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
-  <% end %>
+<!--  https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui-->
+  <%# if spree_current_user %>
+    <%#= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
+  <%# else %>
+    <%#= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
+  <%# end %>
 
   <div class="cart-link" id="link-to-cart" data-top-bar-target="cartLink">
     <noscript>
