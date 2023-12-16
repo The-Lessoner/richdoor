@@ -20,6 +20,15 @@ class CartsController < StoreController
     end
   end
 
+  # https://trello.com/c/CQKgoAUG/13-add-a-link-to-the-cart-to-the-header
+  def create
+    respond_to do |format|
+      format.html { redirect_to cart_path }
+      format.json { render json: { cart_count: current_order.item_count } }
+    end
+  end
+
+
   def update
     authorize! :update, @order, cookies.signed[:guest_token]
     if @order.contents.update_cart(order_params)

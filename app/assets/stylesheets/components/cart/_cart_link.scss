@@ -11,14 +11,16 @@
   background-position: bottom;
   position: relative;
 
+  //https://trello.com/c/CQKgoAUG/13-add-a-link-to-the-cart-to-the-header
   .link-text {
     $color-white:           #FFFFFF;
+    $color-red:             #B22222;
     $color-blue:            #3C76F0;
     $font-weight-bold:      600;
     $font-size-base:        14px;
 
     color: $color-white;
-    background: $color-blue;
+    background: $color-red;
     font-weight: $font-weight-bold;
     border-radius: 50px;
     font-size: $font-size-base / 1.2;
