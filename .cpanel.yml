@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export REPOPATH=/home/richdoor/repositories/richdoor/*
-    - export SITEPATH=/home/richdoor/public_html/
+    - export SITEPATH=/home/richdoor/richdoor/
     - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
     - home/richdoor/public_html/bin/render-build.sh
