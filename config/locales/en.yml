@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  spree:
+    guest_user_welcome: To complete the purchase, please enter your email address.

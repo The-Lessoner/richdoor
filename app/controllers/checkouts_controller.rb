@@ -6,7 +6,8 @@
 # is warranted.
 class CheckoutsController < CheckoutBaseController
   before_action :ensure_valid_state
-  before_action :ensure_valid_payment
+  # https://trello.com/c/YZ0eSj8S/10-implement-creating-an-order-on-request-call-page
+  # before_action :ensure_valid_payment
   before_action :check_registration
   before_action :setup_for_current_state
 
@@ -157,7 +158,7 @@ class CheckoutsController < CheckoutBaseController
     if spree_current_user && spree_current_user.respond_to?(:wallet)
       @wallet_payment_sources = spree_current_user.wallet.wallet_payment_sources
       @default_wallet_payment_source = @wallet_payment_sources.detect(&:default) ||
-                                       @wallet_payment_sources.first
+        @wallet_payment_sources.first
     end
   end
 
@@ -170,7 +171,7 @@ class CheckoutsController < CheckoutBaseController
   # HACK: We can't remove `skip_state_validation?` as of now because it is
   # stubbed in some system tests.
   def skip_state_validation?
-    false
+    true
   end
 
   # Introduces a registration step whenever the +registration_step+ preference is true.
@@ -178,20 +179,16 @@ class CheckoutsController < CheckoutBaseController
     return unless registration_required?
 
     store_location
-    # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
-    # redirect_to new_checkout_session_path
+    redirect_to new_checkout_session_path
   end
 
   def registration_required?
-    # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
-    # Spree::Auth::Config[:registration_step] &&
+    Spree::Auth::Config[:registration_step] &&
       !already_registered?
   end
 
-  # https://trello.com/c/vNXjjb2C/3-remove-my-account-from-ui
   def already_registered?
-     # spree_current_user || guest_authenticated?
-    guest_authenticated?
+    spree_current_user || guest_authenticated?
   end
 
   def guest_authenticated?
