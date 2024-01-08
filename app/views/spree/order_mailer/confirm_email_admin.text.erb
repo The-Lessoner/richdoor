@@ -1,0 +1,21 @@
+<%= t('.dear_admin') %>
+
+<%= t('.instructions') %>
+
+============================================================
+<%= t('.customer_info') %> :
+
+<%= t('.name_customer') %>           <%= Spree::Address.where(id: @order.bill_address_id).pluck(:name).first %>
+<%= t('.phone_customer') %>          <%= Spree::Address.where(id: @order.bill_address_id).pluck(:phone).first %>
+<%= t('.email_customer') %>          <%= @order.email %>
+============================================================
+<%= t('.order_summary') %>
+============================================================
+<% @order.line_items.each do |item| %>
+  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> :
+  <%= raw(item.variant.options_text) -%>   (<%=item.quantity%>) X <%= item.single_money %> = <%= item.display_amount %>
+<% end %>
+============================================================
+<%= t('.total') %> <%= @order.display_total %>
+
+<%= t('.thanks') %>

@@ -127,3 +127,6 @@ group :development, :test do
   gem "rubocop-rails", "~> 2.3"
   gem "rubocop-rspec", "~> 2.0"
 end
+
+#set environment variables
+gem 'dotenv-rails', groups: [:development, :test]
