@@ -45,11 +45,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: ENV.fetch("SMTP_ADDRESS"),
-    port: ENV.fetch("SMTP_PORT"),
-    user_name: ENV.fetch("SMTP_USERNAME"),
-    password: ENV.fetch("SMTP_PASSWORD"),
-    domain: ENV.fetch("SMTP_DOMAIN"),
+    address: ENV["SMTP_ADDRESS"],
+    port: ENV["SMTP_PORT"],
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"],
+    domain: ENV["SMTP_DOMAIN"],
     authentication: :login,
     enable_starttls_auto: true
   }
