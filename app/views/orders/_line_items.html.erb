@@ -1,8 +1,8 @@
 <dl class="line-items" id="line-items">
-  <div>
-    <dt><%= t('spree.subtotal') %>:</dt>
-    <dd><%= order.display_item_total.to_html %></dd>
-  </div>
+<!--  <div>-->
+<!--    <dt><%#= t('spree.subtotal') %>:</dt>-->
+<!--    <dd><%#= order.display_item_total.to_html %></dd>-->
+<!--  </div>-->
 
   <% if order.line_item_adjustments.exists? %>
     <% if order.line_item_adjustments.promotion.eligible.exists? %>
@@ -22,14 +22,14 @@
     <% end %>
   </div>
 
-  <% if order.all_adjustments.tax.exists? %>
-    <div id="tax-adjustments">
-      <% order.all_adjustments.tax.group_by(&:label).each do |label, adjustments| %>
-        <dt><%= t('spree.tax') %> &mdash; <%= label %>:</dt>
-        <dd><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency) %></dd>
-      <% end %>
-    </div>
-  <% end %>
+  <%# if order.all_adjustments.tax.exists? %>
+<!--    <div id="tax-adjustments">-->
+      <%# order.all_adjustments.tax.group_by(&:label).each do |label, adjustments| %>
+<!--        <dt><%#= t('spree.tax') %> &mdash; <%#= label %>:</dt>-->
+<!--        <dd><%#= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency) %></dd>-->
+      <%# end %>
+<!--    </div>-->
+  <%# end %>
 
   <% if order.total_applicable_store_credit > 0.0 %>
     <div id="store-credit">

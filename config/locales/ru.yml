@@ -1,3 +1,17 @@
 ru:
   spree:
     guest_user_welcome: Для оформления покупки введите почтовый адрес
+    billing_address: Данные покупателя
+    order_mailer:
+      confirm_email_admin:
+        dear_admin: Дорогой администратор,
+        name_customer: Имя
+        email_customer: E-mail
+        phone_customer: Телефон
+        instructions: Поступил новый заказ. Детали можно проверить в кабинете администратора.
+        customer_info: Информация о покупателе
+        order_summary: Детали заказа
+        subject: Новый заказ
+        subtotal: Подытог
+        thanks: Хорошего дня, удачи в бизнесе! :)
+        total: Итого

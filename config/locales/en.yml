@@ -33,3 +33,17 @@ en:
   hello: "Hello world"
   spree:
     guest_user_welcome: To complete the purchase, please enter your email address.
+    billing_address: Customer details
+    order_mailer:
+      confirm_email_admin:
+        dear_admin: Dear Administrator,
+        name_customer: Name
+        email_customer: E-mail
+        phone_customer: Phone
+        instructions: New order has been received. You can review the details in the administrator's dashboard.
+        customer_info: Customer info
+        order_summary: Order Summary
+        subject: New Order
+        subtotal: 'Subtotal:'
+        thanks: Have a nice day! Good business!
+        total: 'Order Total:'
