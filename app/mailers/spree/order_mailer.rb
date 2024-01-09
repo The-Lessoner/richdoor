@@ -16,7 +16,7 @@ module Spree
        @store = @order.store
        order_number = @order.number
        subject = build_subject(t('.subject'), resend)
-       admin_emails = Spree::RoleUser.where(role_id: Spree::Role.where(name: "admin").pluck(:id)).pluck(:user_id).map { |user_id| Spree::User.find(user_id).email }
+       admin_emails = Spree::RoleUser.where(role_id: Spree::Role.where(name: "admin").pluck(:id)).pluck(:user_id).map { |user_id| Spree::User.find(user_id) if Spree::User.exists?(user_id)}.compact.map(&:email)
        email_customer = Spree::Order.where(number: order_number).pluck(:email)
        address_customer_id=Spree::Order.where(number: order_number).pluck(:bill_address_id)
        info_customer=Spree::Address.where(id: address_customer_id).pluck(:name, :phone)
