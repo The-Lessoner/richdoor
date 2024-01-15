@@ -1,4 +1,8 @@
 ru:
+  activerecord:
+    attributes:
+      spree/address:
+        name: Имя
   spree:
     guest_user_welcome: Для оформления покупки введите почтовый адрес
     billing_address: Данные покупателя
