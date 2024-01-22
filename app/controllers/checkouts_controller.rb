@@ -8,11 +8,21 @@ class CheckoutsController < CheckoutBaseController
   before_action :ensure_valid_state
   # https://trello.com/c/YZ0eSj8S/10-implement-creating-an-order-on-request-call-page
   # before_action :ensure_valid_payment
-  before_action :check_registration
+  # https://trello.com/c/u3XP9LQb/28-user-part-editing
+  # before_action :check_registration
   before_action :setup_for_current_state
 
   # Updates the order and advances to the next state (when possible.)
   def update
+
+    if params[:order][:email]=="" && params[:order][:bill_address_attributes][:phone]==""
+      @order.errors.add(:base, "#{I18n.t("spree.phone_email_empty")}")
+      render :edit
+      return
+    end
+
+    check_mail
+
     if update_order
 
       assign_temp_address
@@ -25,18 +35,26 @@ class CheckoutsController < CheckoutBaseController
       if @order.completed?
         finalize_order
       else
+
         send_to_next_state
       end
 
     else
       render :edit
     end
+
   end
 
   private
 
   def update_order
     Spree::OrderUpdateAttributes.new(@order, update_params, request_env: request.headers.env).apply
+  end
+
+  def check_mail
+    if !params[:order].nil?
+      params[:order][:email] == "" ? (params[:order][:email] = "") : (params[:order][:email] =~ Devise.email_regexp)
+    end
   end
 
   def assign_temp_address

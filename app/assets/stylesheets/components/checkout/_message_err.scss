@@ -1,0 +1,27 @@
+
+.errorExplanation {
+  padding: 10px 15px;
+  //border-top: 3px solid red;
+  background-color: lighten(red, 40);
+  border-radius: 10px;
+  color: #212529;
+  margin-bottom: 15px;
+
+  h2 {
+    font-size: 140%;
+    margin-bottom: 5px;
+  }
+
+  p {
+    padding: 10px 0;
+  }
+
+  ul {
+    list-style-position: inside;
+
+    li {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
