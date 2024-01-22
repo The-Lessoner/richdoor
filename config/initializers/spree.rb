@@ -64,6 +64,17 @@ Spree::Backend::Config.configure do |config|
   #   match_path: '/reports',
   # )
 
+  #https://trello.com/c/rexO4SNd/25-goods-editing-and-creating
+
+
+  config.menu_items.select!  do |item|
+    [:orders, :products, :users, :settings].include?(item.label)
+  end
+
+  config.menu_items.detect { |item| item.label == :settings }&.children&.select! do |child|
+    [:stores].include?(child.label)
+  end
+
   # Custom frontend product path
   #
   # config.frontend_product_path = ->(template_context, product) {

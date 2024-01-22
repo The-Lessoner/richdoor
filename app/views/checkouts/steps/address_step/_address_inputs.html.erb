@@ -93,8 +93,10 @@
 
     <%= form.telephone_field :phone,
                              required: address.require_phone?,
+                             value: "+375(__)___-__-__",
                              autocomplete: "#{address_type} home tel"
     %>
+    <%= form.hidden_field :phone, value: "", id: "hidden_phone_input" %>
   </div>
 
   <% if Spree::Config[:alternative_shipping_phone] %>
@@ -105,3 +107,4 @@
   <% end %>
 </div>
 
+<%= javascript_include_tag 'phone_mask' %>
