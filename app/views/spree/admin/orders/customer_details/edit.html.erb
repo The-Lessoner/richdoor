@@ -7,10 +7,10 @@
 
 <div class="js-customer-details" data-order-number="<%= @order.number %>">
   <div id="select-customer" data-hook>
-    <fieldset class="no-border-bottom">
-      <legend align="center"><%= t('spree.customer_search') %></legend>
-      <%= hidden_field_tag :customer_search,  nil, class: 'fullwidth title' %>
-    </fieldset>
+<!--    <fieldset class="no-border-bottom">-->
+<!--      <legend align="center"><%#= t('spree.customer_search') %></legend>-->
+      <%#= hidden_field_tag :customer_search,  nil, class: 'fullwidth title' %>
+<!--    </fieldset>-->
   </div>
 
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
