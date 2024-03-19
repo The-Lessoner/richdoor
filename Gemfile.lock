@@ -105,6 +105,10 @@ GEM
       activesupport (>= 3.0.0)
     climate_control (0.2.0)
     concurrent-ruby (1.2.2)
+    countries (6.0.0)
+      unaccent (~> 0.3)
+    country_select (9.0.0)
+      countries (> 5.0, < 7.0)
     crass (1.0.6)
     database_cleaner (1.99.0)
     date (3.3.4)
@@ -457,6 +461,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unaccent (0.4.0)
     unicode-display_width (2.5.0)
     view_component (3.7.0)
       activesupport (>= 5.2.0, < 8.0)
@@ -486,6 +491,7 @@ DEPENDENCIES
   canonical-rails
   capybara
   capybara-screenshot (~> 1.0)
+  country_select
   database_cleaner (~> 1.7)
   debug
   dotenv-rails

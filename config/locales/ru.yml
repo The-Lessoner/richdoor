@@ -4,6 +4,9 @@ ru:
       spree/address:
         name: Имя
   spree:
+    phone_email_empty: Необходимо указать Email или номер телефона
+    phone_val:  должен содержать не менее 9 цифр.
+    optionally: Опционально
     guest_user_welcome: Для оформления покупки введите почтовый адрес
     billing_address: Данные покупателя
     order_mailer:
