@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require phone_mask.js
 
 // https://trello.com/c/CQKgoAUG/13-add-a-link-to-the-cart-to-the-header
 document.addEventListener("turbo:load", function() {

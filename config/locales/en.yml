@@ -36,6 +36,9 @@ en:
       spree/address:
         name: Name
   spree:
+    phone_email_empty: Email or Phone must be present.
+    phone_val: must contain at least 9 digits.
+    optionally: Optionally
     guest_user_welcome: To complete the purchase, please enter your email address.
     billing_address: Customer details
     order_mailer:

@@ -23,7 +23,7 @@ module Spree
     # @param event [Omnes::UnstructuredEvent]
     def send_confirmation_email(event)
       order = event[:order]
-      unless order.confirmation_delivered?
+      unless order.confirmation_delivered? || order.email == ""
         Spree::Config.order_mailer_class.confirm_email(order).deliver_later
         order.update_column(:confirmation_delivered, true)
       end
